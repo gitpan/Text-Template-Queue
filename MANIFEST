@@ -1,0 +1,13 @@
+Changes
+README
+Artistic
+Makefile.PL
+MANIFEST
+Queue.pm
+META.yml                                 Module meta-data (added by MakeMaker)
+t/1-load.t
+t/2-q.t
+t/3-queue.t
+t/4-process.t
+t/5-delete.t
+t/helloworld.html

@@ -1,0 +1,18 @@
+Text::Template::Queue
+
+This module basically stores Text::Template method arguments in an
+array, then passes them to the constructor and fill_in methods when
+requested.  Using Text::Template::Queue will allow a person to more
+easily control their output, and even make mistakes.
+
+See perldoc Text::Template::Queue and Text::Template
+
+
+
+sili@cpan.org for comments/questions
+
+
+--------
+Version 0.1 - Jan. 27 2005
+	First release
+
