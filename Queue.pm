@@ -6,7 +6,7 @@ use warnings;
 use Text::Template;
 use Carp;
 
-$Text::Template::Queue::VERSION = '0.1';
+$Text::Template::Queue::VERSION = '0.2';
 
 sub new	{
 	my $class = shift;
@@ -79,7 +79,7 @@ sub delete	{
 	my ($self, $index) = @_;
 	my $q = $$self{q};
 
-	splice @$q, $index, 1;
+	$$q[$index] = undef;
 
 	return $#$q
 }
@@ -95,6 +95,7 @@ sub process	{
 	my $result = '';
 
 	foreach my $item (@$q)	{
+		next unless defined $item;
 		if(ref $item)	{
 			my $obj = Text::Template->new(%{$$item{resource}});
 			return undef unless $obj;
@@ -123,7 +124,7 @@ Text::Template::Queue - Easy management for multiple Text::Template objects
 
 =head1 VERSION
 
-Version 0.1
+Version 0.2
 
 =head1 SYNOPSIS
 
@@ -183,9 +184,11 @@ Text::Template for error checking
 =head2 queueStr($string, $prepend)
 
 This will add $string to the end of the queue if $prepend is not provided.
-Otherwise it will stick it in the front. See queue() for what $append does.
+Otherwise it will stick it in the front. See queue() for what $prepend does.
 This returns the index of the item in the queue. Returns undef on failure,
-see Text::Template for error checking
+see Text::Template for error checking. If you need to do more advanced
+things with Text::Template objects, then create your own object and pass the
+fill_in() result to this method.
 
 =head2 q($file, $vars, $prepend)
 

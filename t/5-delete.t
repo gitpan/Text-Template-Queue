@@ -29,7 +29,7 @@ else	{
 	print "not ok 3\n";
 }
 
-if($obj && $obj->delete(0) == -1)	{
+if($obj && $obj->delete(0) == 0)	{
 	print "ok 4\n";
 }
 else	{
