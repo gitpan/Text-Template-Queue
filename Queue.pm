@@ -6,7 +6,7 @@ use warnings;
 use Text::Template;
 use Carp;
 
-$Text::Template::Queue::VERSION = '0.2';
+$Text::Template::Queue::VERSION = '0.3';
 
 sub new	{
 	my $class = shift;
@@ -124,7 +124,7 @@ Text::Template::Queue - Easy management for multiple Text::Template objects
 
 =head1 VERSION
 
-Version 0.2
+Version 0.3
 
 =head1 SYNOPSIS
 
@@ -136,10 +136,10 @@ Version 0.2
   #quickly append a file/hash to the queue
   $ttq->q("hello_world.html", {world => 'Cambodia'});
   $ttq->q("hello_world.html", {world => 'America'});
-  my $antartica = $ttq->q("hello_world.html", {world => 'Antartica'});
+  my $antarctica = $ttq->q("hello_world.html", {world => 'Antarctica'});
 
   #Antartica is cold, let's remove it
-  $ttq->delete($antartica);
+  $ttq->delete($antarctica);
 
   #do more advanced things with Text::Template objects
   open my $fh, "testing.txt" or die $!;

@@ -1,5 +1,7 @@
 Revision history for Perl extension Text::Template::Queue.
 
+0.3 Thus Jan 27
+	Fixed a couple of typos in the docs
 0.2 Thurs Jan 27
 	Some small bugs I didn't catch before are fixed.
 	Slightly modified docs, too
